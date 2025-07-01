@@ -1,4 +1,5 @@
 import 'package:doctor_appointment/methi_manchak.dart';
+import 'package:doctor_appointment/views/app_screens/starting_view/splash_view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:SweetHome(),
+      home:SplashScreen(),
+      //SweetHome(),
     );
   }
 }
