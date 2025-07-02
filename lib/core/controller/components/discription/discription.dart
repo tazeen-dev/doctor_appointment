@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../utils/app_colors/app_colors.dart';
+
 class DescriptionText extends StatelessWidget {
   final String text;
   final double fontSize;
@@ -19,7 +21,7 @@ class DescriptionText extends StatelessWidget {
         this.fontSize = 14,
         this.fontWeight = FontWeight.w400,
         this.fontStyle = FontStyle.normal,
-        this.color,
+        this.color=AppColors.lightText,
         this.textAlign,
         this.maxLines,
         this.overflow,
@@ -38,7 +40,7 @@ class DescriptionText extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
         fontStyle: fontStyle,
-        color: color ?? Theme.of(context).textTheme.bodyMedium?.color,
+        color: color,
         letterSpacing: letterSpacing,
         height: height ?? 1.5,
       ),

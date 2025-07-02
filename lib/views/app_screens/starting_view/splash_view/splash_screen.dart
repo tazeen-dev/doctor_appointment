@@ -1,4 +1,5 @@
 import 'package:doctor_appointment/core/controller/utils/app_icons/app_icons.dart';
+import 'package:doctor_appointment/views/app_screens/starting_view/onboarding_view/onboarding_screens.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/controller/utils/app_colors/app_colors.dart';
 import 'dart:async';
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     Timer(const Duration(seconds: 4), () {
-      // Navigator.pushReplacement(...);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
     });
   }
 
@@ -44,7 +45,6 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       backgroundColor: AppColors.white,
       body: Stack(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../utils/app_colors/app_colors.dart';
+
 class BoldText extends StatelessWidget {
   final String text;
   final double fontSize;
@@ -15,10 +17,10 @@ class BoldText extends StatelessWidget {
   const BoldText(
     this.text, {
     super.key,
-    this.fontSize = 16,
+    this.fontSize = 20,
     this.fontWeight = FontWeight.w700,
     this.fontStyle = FontStyle.normal,
-    this.color,
+    this.color=AppColors.greenColor,
     this.textAlign,
     this.maxLines,
     this.overflow,
