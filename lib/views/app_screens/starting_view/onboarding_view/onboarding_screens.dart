@@ -160,6 +160,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     GreenBoldButton(
                       text: "Get Started",
                       onPressed: () {
+                        Navigator.pushNamed(context,'/welcome');
                       },
                     ),
                 ],

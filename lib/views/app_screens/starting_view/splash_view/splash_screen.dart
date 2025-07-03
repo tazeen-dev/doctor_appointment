@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     Timer(const Duration(seconds: 4), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
+      Navigator.pushReplacementNamed(context,'/onboarding');
     });
   }
 

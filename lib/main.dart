@@ -1,4 +1,5 @@
 import 'package:doctor_appointment/methi_manchak.dart';
+import 'package:doctor_appointment/routes/app_routes.dart';
 import 'package:doctor_appointment/views/app_screens/starting_view/splash_view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Doctor Appointment',
+      initialRoute: '/splash',
+      routes: {
+        '/splash': (context) => const SplashScreen(),
+        ...AppRoutes.routes,
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -33,7 +39,6 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:SplashScreen(),
       //SweetHome(),
     );
   }
