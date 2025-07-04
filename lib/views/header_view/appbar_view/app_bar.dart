@@ -14,26 +14,6 @@ class Header extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 10,
-                )
-              ],
-            ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Color(0xFF4B5563),
-              ),
-              onPressed: () {},
-            ),
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
@@ -57,6 +37,7 @@ class Header extends StatelessWidget {
               ),
                 ],
               ),
+          SizedBox(width: 80,),
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -72,7 +53,7 @@ class Header extends StatelessWidget {
             child: IconButton(
               icon: const Icon(
                 Icons.notifications_none_outlined,
-                color: Color(0xFF4B5563),
+                color:AppColors.black,
               ),
               onPressed: () {},
             ),

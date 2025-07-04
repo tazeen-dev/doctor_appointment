@@ -1,10 +1,24 @@
+// promo_banner.dart
 import 'package:flutter/material.dart';
+
 class PromoBanner extends StatelessWidget {
-  const PromoBanner();
+  final String title;
+  final String subtitle;
+  final String imageUrl;
+  final String doctorCount;
+
+  const PromoBanner({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.imageUrl,
+    required this.doctorCount,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -23,46 +37,57 @@ class PromoBanner extends StatelessWidget {
       ),
       child: Row(
         children: [
+          // Left Column
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Treated doctor on your schedule',
-                  style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w300),
-                ),
+                Text(subtitle,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300)),
                 const SizedBox(height: 8),
-                const Text(
-                  'Consult A Doctor',
-                  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-                ),
+                Text(title,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold)),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white.withOpacity(0.3),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
                     elevation: 0,
                   ),
-                  child: const Text('Book Today!', style: TextStyle(color: Colors.white)),
+                  child: const Text('Book Today!',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),
           ),
+
           const SizedBox(width: 16),
+
+          // Right Column
           Column(
             children: [
               Image.network(
-                'https://placehold.co/80x80/FFFFFF/3B82F6?text=Doc',
+                imageUrl,
                 width: 80,
                 height: 80,
                 errorBuilder: (context, error, stackTrace) => const Icon(Icons.person, size: 80, color: Colors.white),
               ),
               const SizedBox(height: 8),
-              const Text(
-                '8K 800+\nActive Doctor',
+              Text(
+                doctorCount,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600),
               ),
             ],
           )

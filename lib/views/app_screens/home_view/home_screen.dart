@@ -1,3 +1,4 @@
+import 'package:doctor_appointment/views/app_widgets/drawer_widget/drawer_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/doctor_datamodel/doctor_datamodel.dart';
@@ -41,11 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DoctorDrawer(),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
           children: [
-            const Header(),
+            Header(),
             const SizedBox(height: 24),
             const PromoBanner(),
             const SizedBox(height: 24),
