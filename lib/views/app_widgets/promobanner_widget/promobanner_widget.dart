@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 
+import '../../../core/controller/components/promonanner/promobanner.dart';
+import '../../../core/controller/utils/app_images/app_images.dart';
 import '../../../data/models/promobanner_model/promobanner_model.dart';
 
 class PromoBannerCarousel extends StatefulWidget {
@@ -14,20 +15,20 @@ class _PromoBannerCarouselState extends State<PromoBannerCarousel> {
   final List<PromoData> _promoList = [
     PromoData(
       title: 'Consult A Doctor',
-      subtitle: 'Get expert care from home',
-      imageUrl: 'https://placehold.co/80x80/FFFFFF/3B82F6?text=Doc1',
+      subtitle: 'Trusted doctor on your schedule 😉 ',
+      imageUrl: AppImages.doctorimage,
       doctorCount: '8K+ Active Doctors',
     ),
     PromoData(
       title: '24/7 Support',
       subtitle: 'Talk to doctors anytime',
-      imageUrl: 'https://placehold.co/80x80/FFFFFF/06B6D4?text=Doc2',
+      imageUrl: AppImages.backgroundimage,
       doctorCount: '24h Doctor Access',
     ),
     PromoData(
       title: 'Book Instantly',
       subtitle: 'Skip the waiting room',
-      imageUrl: 'https://placehold.co/80x80/FFFFFF/F59E0B?text=Doc3',
+      imageUrl: AppImages.doctor1,
       doctorCount: 'Instant Booking',
     ),
   ];
@@ -35,7 +36,7 @@ class _PromoBannerCarouselState extends State<PromoBannerCarousel> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: 180,
       child: PageView.builder(
         controller: PageController(viewportFraction: 0.9),
         itemCount: _promoList.length,

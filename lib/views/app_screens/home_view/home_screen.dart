@@ -1,6 +1,7 @@
 import 'package:doctor_appointment/views/app_widgets/drawer_widget/drawer_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/controller/components/promonanner/promobanner.dart';
 import '../../../data/models/doctor_datamodel/doctor_datamodel.dart';
 import '../../app_widgets/promobanner_widget/promobanner_widget.dart';
 import '../../app_widgets/upcomming_appointment_widget/upcomming-appointment_widget.dart';
@@ -49,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Header(),
             const SizedBox(height: 24),
-            const PromoBanner(),
+            const PromoBannerCarousel(),
             const SizedBox(height: 24),
             RecommendedDoctors(doctorsList: doctorsList,),
             const SizedBox(height: 24),
