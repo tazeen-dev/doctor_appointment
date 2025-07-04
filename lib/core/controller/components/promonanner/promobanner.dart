@@ -80,7 +80,13 @@ class PromoBanner extends StatelessWidget {
           // Image
           Column(
             children: [
-              Image.asset(imageUrl),
+              Image.asset(
+              imageUrl,
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+
               const SizedBox(height: 8),
               Text(
                 doctorCount,
