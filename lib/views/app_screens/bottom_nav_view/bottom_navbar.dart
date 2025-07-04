@@ -1,20 +1,45 @@
+import 'package:doctor_appointment/views/app_screens/appointment_view/appointment_screen.dart';
 import 'package:flutter/material.dart';
-class BottomNavbar extends StatefulWidget {
-  const BottomNavbar({super.key});
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+
+import '../appointment_detail_view/appointment_detail_screen.dart';
+import '../home_view/home_screen.dart';
+
+class MainNavScreen extends StatefulWidget {
+  const MainNavScreen({super.key});
 
   @override
-  State<BottomNavbar> createState() => _BottomNavbarState();
+  State<MainNavScreen> createState() => _MainNavScreenState();
 }
 
-class _BottomNavbarState extends State<BottomNavbar> {
+class _MainNavScreenState extends State<MainNavScreen> {
+  int _currentIndex = 0;
+  final List<Widget> _screens = const [
+    HomeScreen(),
+   AppointmentScreen(),
+    AppointmentDetailScreen(),
+    ProfileScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          
+      body: _screens[_currentIndex],
+      bottomNavigationBar: ConvexAppBar(
+        backgroundColor: Colors.white,
+        activeColor: Colors.teal,
+        color: Colors.grey[600],
+        style: TabStyle.reactCircle, // Other styles: fixed, flip, react, textIn, etc.
+        items: const [
+          TabItem(icon: Icons.home, title: 'Home'),
+          TabItem(icon: Icons.calendar_today, title: 'Appointments'),
+          TabItem(icon: Icons.message, title: 'Messages'),
+          TabItem(icon: Icons.person, title: 'Profile'),
         ],
+        initialActiveIndex: _currentIndex,
+        onTap: (index) => setState(() => _currentIndex = index),
       ),
     );
   }
 }
+
