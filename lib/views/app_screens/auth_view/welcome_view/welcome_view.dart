@@ -14,7 +14,6 @@ class _WelcomeViewState extends State<WelcomeView> {
     return Scaffold(
       body: Column(
         children: [
-          
           WelcomeButtons(
             onLogin: () => Navigator.pushNamed(context, '/login'),
             onSignup: () => Navigator.pushNamed(context, '/signup'),
