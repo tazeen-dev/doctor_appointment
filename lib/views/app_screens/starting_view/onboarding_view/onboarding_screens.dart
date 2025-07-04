@@ -17,7 +17,6 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int currentPage = 0;
-
   final List<Map<String, String>> _onboardingData = [
     {
       'image': AppImages.backgroundimage,
@@ -80,7 +79,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: screenHeight*.1,),
+                        SizedBox(height: screenHeight*0.08,),
                         Stack(
                           alignment: Alignment.center,
                           children: [
