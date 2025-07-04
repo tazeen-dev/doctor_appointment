@@ -4,6 +4,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 import '../appointment_detail_view/appointment_detail_screen.dart';
 import '../home_view/home_screen.dart';
+import '../profile_view/profile_screen.dart';
 
 class MainNavScreen extends StatefulWidget {
   const MainNavScreen({super.key});

@@ -1,3 +1,4 @@
+import 'package:doctor_appointment/views/app_screens/bottom_nav_view/bottom_navbar.dart';
 import 'package:doctor_appointment/views/app_screens/starting_view/onboarding_view/onboarding_screens.dart';
 import 'package:doctor_appointment/views/app_screens/starting_view/splash_view/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
     '/splash':(context) => const SplashScreen(),
     '/onboarding':(context)=>const OnboardingScreen(),
+    '/navbar':(context)=>const MainNavScreen(),
     '/welcome': (context) => const WelcomeView(),
     '/login': (context) => const LoginScreen(),
     '/signup': (context) => const SignupScreen(),

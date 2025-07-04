@@ -67,6 +67,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
+                      Navigator.pushNamed(context,'/navbar');
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
                         // TODO: Signup logic
