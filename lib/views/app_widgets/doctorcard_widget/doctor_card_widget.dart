@@ -1,14 +1,22 @@
+import 'package:doctor_appointment/core/controller/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
-
+import '../../../core/controller/utils/app_colors/app_colors.dart';
 import '../../../data/models/doctor_datamodel/doctor_datamodel.dart';
+
 class DoctorCard extends StatelessWidget {
   final Doctor doctor;
-  const DoctorCard({required this.doctor});
+  const DoctorCard({required this.doctor, super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final cardWidth = screenWidth * 0.45; // responsive width
+    final imageHeight = screenWidth < 350 ? 80.0 : 100.0; // smaller image for narrow screens
+    final fontSizeName = screenWidth < 350 ? 12.0 : 14.0;
+    final fontSizeSpecialty = screenWidth < 350 ? 10.0 : 12.0;
+
     return Container(
-      width: 160,
+      width: cardWidth,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -28,16 +36,11 @@ class DoctorCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
+                child: Image.asset(
                   doctor.image,
                   width: double.infinity,
-                  height: 100,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-      height: 100,
-                   color: Colors.grey[200],
-                   child: const Icon(Icons.person, size: 50, color: Colors.grey),
-                  ),
+                  height: imageHeight,
+                  fit: BoxFit.contain,
                 ),
               ),
               if (doctor.isAvailable)
@@ -52,7 +55,11 @@ class DoctorCard extends StatelessWidget {
                     ),
                     child: const Text(
                       'Available',
-                      style: TextStyle(color: Colors.cyan, fontSize: 10, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        color: AppColors.greenColor,
+                        fontSize: 7,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -61,14 +68,21 @@ class DoctorCard extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             doctor.name,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Color(0xFF1F2937)),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: fontSizeName,
+              color: const Color(0xFF1F2937),
+            ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 4),
           Text(
             doctor.specialty,
-            style: const TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(
+              fontSize: fontSizeSpecialty,
+              color: Colors.grey,
+            ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -82,7 +96,10 @@ class DoctorCard extends StatelessWidget {
                   const SizedBox(width: 4),
                   Text(
                     doctor.rating.toString(),
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
                   ),
                 ],
               ),

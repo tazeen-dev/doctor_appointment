@@ -1,4 +1,6 @@
+import 'package:doctor_appointment/core/controller/components/bold_text/bold_text.dart';
 import 'package:flutter/material.dart';
+import '../../../core/controller/utils/app_colors/app_colors.dart';
 import '../../../data/models/doctor_datamodel/doctor_datamodel.dart';
 import '../../app_widgets/doctorcard_widget/doctor_card_widget.dart';
 
@@ -19,25 +21,21 @@ class _RecommendedDoctorsState extends State<RecommendedDoctors> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Recommended Doctors',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF1F2937)),
-          ),
+          const BoldText('Recommended Doctors'),
           const SizedBox(height: 16),
           const TabBar(
             isScrollable: true,
-            labelColor: Colors.cyan,
+            labelColor: AppColors.greenColor,
             unselectedLabelColor: Colors.grey,
-            indicatorColor: Colors.cyan,
+            indicatorColor: AppColors.greenColor,
             indicatorSize: TabBarIndicatorSize.label,
             tabs: [
-              Tab(text: 'Latest'),
+              Tab(text: 'Latest',),
               Tab(text: 'Pediatric Specialist'),
               Tab(text: 'Available'),
             ],
           ),
           const SizedBox(height: 16),
-
           SizedBox(
             height: 220,
             child: TabBarView(
